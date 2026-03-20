@@ -1,7 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { Swords, Skull, Timer, BarChart3, Map } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
 
 const navItems = [
   { to: '/', icon: Swords, label: 'Campaign HQ' },
@@ -12,8 +10,6 @@ const navItems = [
 ];
 
 export default function Layout() {
-  const location = useLocation();
-
   return (
     <div className="min-h-screen bg-bg-deep">
       {/* Desktop sidebar — fixed */}
@@ -52,17 +48,7 @@ export default function Layout() {
 
       {/* Main content — uses CSS calc to constrain width to viewport minus sidebar */}
       <main className="app-main pb-20 md:pb-0">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
-          >
-            <Outlet />
-          </motion.div>
-        </AnimatePresence>
+        <Outlet />
       </main>
 
       {/* Mobile bottom nav */}
