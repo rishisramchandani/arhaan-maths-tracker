@@ -1,5 +1,5 @@
 import type { Topic, TopicStatus } from './types';
-import { XP_VALUES, getTotalRemainingXP } from './types';
+import { getTotalRemainingXP } from './types';
 
 function makeTopic(paper: string, chapter: string, name: string, status: TopicStatus): Topic {
   const id = `${paper.replace(/\s+/g, '_').toLowerCase()}-${chapter.replace(/\s+/g, '_').toLowerCase()}-${name.replace(/[\s/()]+/g, '_').toLowerCase()}`;

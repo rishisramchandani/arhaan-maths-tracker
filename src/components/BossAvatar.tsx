@@ -9,7 +9,6 @@ interface BossAvatarProps {
 // Each boss has a unique SVG illustration themed to their math domain
 export default function BossAvatar({ paper, defeated, size = 48 }: BossAvatarProps) {
   const s = size;
-  const half = s / 2;
   const opacity = defeated ? 0.5 : 1;
 
   const avatars: Record<string, React.ReactNode> = {

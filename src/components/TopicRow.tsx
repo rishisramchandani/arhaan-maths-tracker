@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Undo2, ChevronRight } from 'lucide-react';
+import { Check, ChevronRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import StatusBadge from './StatusBadge';
 import DamageNumber from './DamageNumber';
